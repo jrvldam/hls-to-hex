@@ -1,8 +1,9 @@
 {
-  "name": "@jrvldam/hls-to-hex",
+  "name": "@jrvldam/hsl-to-hex",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "prepublish": "npm ls && npm test",
     "test": "npm run lint",
     "lint": "standard --fix && tap --cov test"
   },
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/jrvldam/hls-to-hex#readme",
   "description": "Convert HSL colors to RGB colors in hex format.",
   "dependencies": {
+    "debug": "^4.1.1",
     "hsl-to-rgb-for-reals": "^1.1.1"
   },
   "devDependencies": {

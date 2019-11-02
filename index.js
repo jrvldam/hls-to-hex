@@ -1,4 +1,5 @@
 const toRgb = require('hsl-to-rgb-for-reals')
+const debug = require('debug')('hsl-to-hex')
 
 function hls (hue, saturation, luminosity) {
   hue = cycle(hue)
@@ -17,14 +18,17 @@ function hls (hue, saturation, luminosity) {
 }
 
 function max (val, n) {
+  debug(`ensuring ${val} is no more than ${n}`)
   return (val > n) ? n : val
 }
 
 function min (val, n) {
+  debug(`ensuring ${val} is no less than ${n}`)
   return (val < n) ? n : val
 }
 
 function cycle (val) {
+  debug(`ensuring ${val} within the 0-359 range`)
   val = max(val, 1e7)
   val = min(val, -1e7)
 
